@@ -1,0 +1,50 @@
+reset
+
+to randomcolor
+  make "r rand 255
+  make "g rand 255
+  make "b rand 255
+  color [:r :g :b]
+end
+
+to randomplace
+  make "x rand 500
+  make "y rand 500
+  setxy :x :y
+end
+
+to randomcircle
+  circle (rand 200) + 10
+end
+
+to randomtriangle
+  rt (rand 360)
+  make "length (rand 200) + 30
+  fw :length
+  rt 120
+  fw :length
+  rt 120
+  fw :length
+end
+
+to randomsquare
+  rt (rand 360)
+  make "length (rand 600) + 30
+  repeat 4 [
+    fw :length
+    rt 90
+  ]
+end
+
+to randomshape
+  repeat 800 [
+    penwidth (rand 7) + 7
+    randomcolor
+    randomcircle
+    randomsquare
+    randomtriangle
+  ]
+
+end
+
+randomshape
