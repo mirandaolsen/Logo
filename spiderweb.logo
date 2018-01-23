@@ -1,0 +1,12 @@
+to spiral :radius 
+  make "n 1
+  repeat 100 [
+    fw :n 
+    rt 46
+    make "n :n+1
+  ]
+
+end 
+
+reset
+spiral 100
