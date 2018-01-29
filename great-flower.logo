@@ -1,0 +1,84 @@
+reset 
+
+color [212 242 249]
+setxy 0 250 
+penwidth 500
+rt 90
+fw 500
+
+home
+
+rt 180
+color [105 131 20 ]
+penwidth 20
+fw 250
+
+home
+
+to randomcolor
+  make "r rand 255
+  make "g rand 255
+  make "b rand 255
+  color [:r :g :b]
+end
+
+to square :length
+  repeat 4 [
+    fw :length
+    rt 90
+  ]
+end
+
+to diamond :length :angle
+  repeat 2 [
+    fw :length
+    rt :angle
+    fw :length
+    rt 180 - :angle
+  ]
+end
+
+to randompetal :width :petallength :count :angle
+  repeat :count [
+    penwidth :width
+    randomcolor
+    make "l :petallength
+    repeat 2 [
+      diamond :l 10 
+      make "l :l - 5
+    ]
+    diamond :petallength 10
+    diamond :petallength/1.5 10
+    rt :angle
+  ]
+end
+
+randompetal 4 100 30 12
+    
+to seed
+ color [71 38 24]
+ penwidth 80
+ circle 1 
+end
+
+home
+    
+to dot :radius 
+  make "n 1
+  penwidth 2
+  color [254 217 15]
+  repeat :radius [
+    pu
+    fw :n 
+    pd
+    circle 1
+    rt 46
+    make "n :n+1
+  ]
+end 
+  
+seed
+dot 29
+home 
+rt 120
+dot 29
