@@ -43,7 +43,7 @@ to randompetal :width :petallength :count :angle
     penwidth :width
     randomcolor
     make "l :petallength
-    repeat 2 [
+    repeat 20 [
       diamond :l 10 
       make "l :l - 5
     ]
