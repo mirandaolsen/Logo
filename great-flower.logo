@@ -47,8 +47,6 @@ to randompetal :width :petallength :count :angle
       diamond :l 10 
       make "l :l - 5
     ]
-    diamond :petallength 10
-    diamond :petallength/1.5 10
     rt :angle
   ]
 end
