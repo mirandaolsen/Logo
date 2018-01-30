@@ -1,17 +1,24 @@
 reset 
 
-color [212 242 249]
-setxy 0 250 
-penwidth 500
-rt 90
-fw 500
+to sky
+  color [212 242 249]
+  setxy 0 250 
+  penwidth 500
+  rt 90
+  fw 500
+end
+
+sky
+
+to stem :x :y
+  rt 180
+  color [105 131 20 ]
+  penwidth 20
+  fw 250
+end
 
 home
-
-rt 180
-color [105 131 20 ]
-penwidth 20
-fw 250
+stem 250 250
 
 home
 
@@ -20,13 +27,6 @@ to randomcolor
   make "g rand 255
   make "b rand 255
   color [:r :g :b]
-end
-
-to square :length
-  repeat 4 [
-    fw :length
-    rt 90
-  ]
 end
 
 to diamond :length :angle
@@ -49,10 +49,32 @@ to randompetal :width :petallength :count :angle
     ]
     rt :angle
   ]
+    
+    
+end
+ 
+to overlappingpetal :width :petallength :count :angle
+  repeat :count [
+    penwidth :width
+    randomcolor
+    make "l :petallength
+    repeat 20 [
+      diamond :l 10 
+      make "l :l - 5
+    ]
+    rt :angle
+  ]
+  rt 17
 end
 
-randompetal 4 100 30 12
+to petals
+  overlappingpetal 4 100 30 12
+  overlappingpetal 4 100 30 12
+  
+end
     
+petals
+
 to seed
  color [71 38 24]
  penwidth 80
@@ -79,4 +101,16 @@ seed
 
 home 
 dot 50
+
+
+
+
+to flower :size
+
+
+
+
+end
+ 
+flower 7
 
