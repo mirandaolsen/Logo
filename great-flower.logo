@@ -70,13 +70,13 @@ to dot :radius
     fw :n 
     pd
     circle 1
-    rt 46
+    rt 83
     make "n :n+1
   ]
 end 
   
 seed
-dot 29
+
 home 
-rt 120
-dot 29
+dot 50
+
